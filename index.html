@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pushpa Users Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Pushpa Users Manager</h1>
+    <p>Manage users stored in AWS RDS PostgreSQL.</p>
+
+    <section class="card">
+      <h2 id="form-title">Add User</h2>
+
+      <form id="user-form">
+        <label for="user-id">User ID</label>
+        <input id="user-id" type="number" min="1" required>
+
+        <label for="username">Username</label>
+        <input id="username" type="text" maxlength="100" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" maxlength="254" required>
+
+        <div class="actions">
+          <button type="submit" id="save-button">Add User</button>
+          <button type="button" id="cancel-button" class="secondary" hidden>
+            Cancel Edit
+          </button>
+        </div>
+      </form>
+
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <div class="list-heading">
+        <h2>Users</h2>
+        <button id="refresh-button" class="secondary" type="button">
+          Refresh
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users-body">
+            <tr><td colspan="4">Loading users...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
