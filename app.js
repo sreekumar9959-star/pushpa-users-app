@@ -1,5 +1,5 @@
 
-const API_BASE = "REPLACE_WITH_YOUR_API_GATEWAY_URL";
+const API_BASE = "https://04m1gai4g6.execute-api.ap-southeast-2.amazonaws.com";
 
 const form = document.querySelector("#user-form");
 const userIdInput = document.querySelector("#user-id");
